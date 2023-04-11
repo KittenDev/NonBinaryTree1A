@@ -89,10 +89,20 @@ NIM     :
 void PreOrder(Isi_Tree P);
 
 /*
-Nama    :
-NIM     :
+Nama    : Muhammad Fikri Nur Sya'Bani
+NIM     : 221524019
 */
-void InOrder(Isi_Tree P);
+void InOrder(Isi_Tree P){
+    if(P != NULL){
+        if(P->ps_fs != NULL){
+            InOrder(P->ps_fs);
+        }
+        printf("%d ", P->info); 
+        if(P->ps_nb != NULL){ 
+            InOrder(P->ps_nb);
+        }
+    }
+}
 
 /*
 Nama    :
