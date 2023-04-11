@@ -145,6 +145,7 @@ int NSearch(Isi_Tree P, infotype X){
            break;
 	}
     }
+    return -1;
 }
 
 /*
