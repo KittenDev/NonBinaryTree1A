@@ -134,10 +134,18 @@ NIM     :
 boolean Search(Isi_Tree P, infotype X);
 
 /*
-Nama    :
-NIM     :
+Nama    : Akmal G. Hartono
+NIM     : 221524002
 */
-int NSearch(Isi_Tree P, infotype X);
+int NSearch(Isi_Tree P, infotype X){
+    int i;
+	    for(i = 1; i <= jml_maks +1; i++){
+			if(P[i].info == X){
+				return i;
+                break;
+			}
+		}
+}
 
 /*
 Nama    : Naffa Lenteranisa
