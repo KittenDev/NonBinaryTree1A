@@ -139,12 +139,12 @@ NIM     : 221524002
 */
 int NSearch(Isi_Tree P, infotype X){
     int i;
-	    for(i = 1; i <= jml_maks +1; i++){
-			if(P[i].info == X){
-				return i;
-                break;
-			}
-		}
+    for(i = 1; i <= jml_maks; i++){
+	if(P[i].info == X){
+	   return i;
+           break;
+	}
+    }
 }
 
 /*
