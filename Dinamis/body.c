@@ -22,6 +22,28 @@ void PreOrder (address P)
     boolean valid;
 
     current = P;
+    printf("%c ", current->info);
+    valid = true;
+    
+    do 
+    {
+        if (current->ps_fs != nil && valid)
+        {
+            current = current->ps_fs;
+            printf("%c ", current->info);
+        }
+        else if (current->ps_nb != nil)
+        {
+            current = current->ps_nb;
+            printf("%c ", current->info);
+            valid = true;
+        }
+        else
+        {
+            current = current->ps_pr;
+            valid = false;
+        }
+    }while (current->ps_pr != nil);
 }
 
 /*
