@@ -7,10 +7,21 @@ NIM     :
 void Create_tree(address X, int Jml_Node);
 
 /*
-Nama    :
-NIM     :
+Nama    : Muhammad Azharuddin Hamid
+NIM     : 221524018
 */
-boolean IsEmpty (address P);
+boolean IsEmpty (address P){
+
+    if (P != nil)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+    
+}
 
 /*
 Nama    : Dafa Alfarizki Pratama
