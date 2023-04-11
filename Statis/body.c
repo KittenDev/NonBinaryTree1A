@@ -1,13 +1,74 @@
 #include "nbtrees.h"
 
 /*
-Nama    :
+Nama    : 
 NIM     :
 */
-void Create_tree(Isi_Tree X, int Jml_Node);
+void init_tree(Isi_Tree *X);
 
 /*
-Nama    :
+Nama    : Muhammad Rama Nurimani
+NIM     : 221524021
+*/
+void Create_tree(Isi_Tree X, int Jml_Node)
+{
+    int i, nb_idx, pr_idx;
+    infotype node_value, parent_value;
+    init_tree(X);
+
+    printf("Masukan root: ");
+    scanf(" %c", &node_value);
+    X[1].info = node_value;
+    X[1].ps_fs = 0;
+    X[1].ps_nb = 0;
+    X[1].ps_pr = 0;
+
+    for (i = 2; i <= Jml_Node+1; i++)
+    {
+        printf("Masukan node ke-%d: ", i - 1);
+        scanf(" %c", &node_value);
+        X[i].info = node_value;
+        X[i].ps_fs = 0;
+        X[i].ps_nb = 0;
+        X[i].ps_pr = 0;
+
+        // relationship
+        do
+        {
+            printf("Masukan parent dari node %c: ", node_value);
+            scanf(" %c", &parent_value);
+            pr_idx = find_node(X, Jml_Node, parent_value);
+
+            if (pr_idx != -1)
+            {
+                //check fs nya
+                if (X[pr_idx].ps_fs == 0)
+                {
+                    X[pr_idx].ps_fs = i;
+                }
+                else
+                { //cari brother terakhir
+                    nb_idx = X[pr_idx].ps_fs;
+                    while (X[nb_idx].ps_nb != 0)
+                    {
+                        nb_idx = X[nb_idx].ps_nb;
+                    }
+                    X[nb_idx].ps_nb = i;
+                }
+
+                //set parent nya
+                X[i].ps_pr = pr_idx;
+            }
+            else
+            {
+                printf("Parent node dengan nilai %c tidak ditemukan.\n", parent_value);
+            }
+        } while (pr_idx == -1);
+    }
+}
+
+/*
+Nama    : 
 NIM     :
 */
 boolean IsEmpty(Isi_Tree P);
