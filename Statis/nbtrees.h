@@ -51,7 +51,7 @@ boolean IsEmpty (Isi_Tree P);
 
 /***** Traversal *****/
 
-void PreOrder (Isi_Tree P, int i);
+void PreOrder (Isi_Tree P);
 /* Traversal PreOrder */
 /* IS : P terdefinisi */
 /* FS : Semua simpul P sudah ditampilkan secara PreOrder : Parent, fs, nb */

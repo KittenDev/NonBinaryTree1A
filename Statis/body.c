@@ -1,10 +1,19 @@
 #include "nbtrees.h"
 
 /*
-Nama    : 
-NIM     :
+Nama    : Hasna Fitriyani Khairunissa
+NIM     : 221524011
 */
-void init_tree(Isi_Tree *X);
+void init_tree(Isi_Tree *X)
+{
+    int i;
+    for (i = 0; i <= jml_maks; i++) {
+        (*X)[i].info = '\0';
+        (*X)[i].ps_fs = -1;
+        (*X)[i].ps_nb = -1;
+        (*X)[i].ps_pr = -1;
+    }
+}
 
 /*
 Nama    : Muhammad Rama Nurimani
@@ -80,20 +89,10 @@ NIM     :
 void PreOrder(Isi_Tree P);
 
 /*
-Nama    : Muhammad Fikri Nur Sya'Bani
-NIM     : 221524019
+Nama    :
+NIM     :
 */
-void InOrder(Isi_Tree P){
-    if(P != NULL){
-        if(P->ps_fs != NULL){
-            InOrder(P->ps_fs);
-        }
-        printf("%d ", P->info); 
-        if(P->ps_nb != NULL){ 
-            InOrder(P->ps_nb);
-        }
-    }
-}
+void InOrder(Isi_Tree P);
 
 /*
 Nama    :
