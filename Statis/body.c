@@ -83,10 +83,21 @@ NIM     :
 boolean IsEmpty(Isi_Tree P);
 
 /*
-Nama    :
-NIM     :
+Nama    : Rahma Divina
+NIM     : 221524026
 */
-void PreOrder(Isi_Tree P);
+// implementasi struktur data pohon dengan array, 
+// biasanya indeks ke-0 tidak digunakan, karena root tree akan berada di indeks ke-1.
+// pemanggilan modul pada main program, parameter int idx akan diisi 1 karena
+// akan memulai traversal PreOrder dari root tree yang berada di indeks ke-1
+void PreOrder(Isi_Tree P, int idx){
+    if(idx == 0){ 
+		return; //mengakhiri ekskeusi modul saat index = 0
+	}
+	printf("%c ",P[idx].info);
+	PreOrder(P,P[idx].ps_fs);
+	PreOrder(P,P[idx].ps_nb);
+}
 
 /*
 Nama    : Muhammad Fikri Nur Sya'Bani
