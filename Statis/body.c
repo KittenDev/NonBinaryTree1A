@@ -140,10 +140,21 @@ NIM     :
 int NSearch(Isi_Tree P, infotype X);
 
 /*
-Nama    :
-NIM     :
+Nama    : Naffa Lenteranisa
+NIM     : 221524023
 */
-int nbElmt(Isi_Tree P);
+int nbElmt(Isi_Tree P){
+    int count = 0;
+    int i;
+
+    for (i = 1; i <= jml_maks; i++) {
+        if (P[i].info != '\0') { // Node tidak kosong
+            count++;
+        }
+    }
+
+    return count;
+}
 
 /*
 Nama    :
