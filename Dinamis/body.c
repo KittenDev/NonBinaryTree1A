@@ -4,97 +4,100 @@
 Nama    :
 NIM     :
 */
-void Create_tree(nbtree X, int Jml_Node);
+void Create_tree(address X, int Jml_Node);
 
 /*
 Nama    :
 NIM     :
 */
-boolean IsEmpty (nbtree P);
+boolean IsEmpty (address P);
 
 /*
 Nama    : Dafa Alfarizki Pratama
 NIM     : 221524004
 */
-void PreOrder (nbtree P)
+void PreOrder (address P)
 {
-    
+    address current;
+    boolean valid;
+
+    current = P;
 }
 
 /*
 Nama    :
 NIM     :
 */
-void InOrder (nbtree P);
+void InOrder (address P);
 
 /*
 Nama    :
 NIM     :
 */
-void PostOrder (nbtree P);
+void PostOrder (address P);
 
 /*
 Nama    :
 NIM     :
 */
-void Level_order(nbtree X, int Maks_node);
+void Level_order(address X, int Maks_node);
 
 /*
 Nama    :
 NIM     :
 */
-void PrintTree (nbtree P);
+void PrintTree (address P);
 
 /*
 Nama    :
 NIM     :
 */
-boolean Search (nbtree P, infotype X);
+boolean Search (address P, infotype X);
 
 /*
 Nama    :
 NIM     :
 */
-int NSearch (nbtree P, infotype X);
+int NSearch (address P, infotype X);
 
 /*
 Nama    :
 NIM     :
 */
-int nbElmt (nbtree P);
+int nbElmt (address P);
 
 /*
 Nama    :
 NIM     :
 */
-int nbDaun (nbtree P);
+int nbDaun (address P);
 
 /*
 Nama    :
 NIM     :
 */
-int Level (nbtree P, infotype X);
+int Level (address P, infotype X);
 
 /*
 Nama    :
 NIM     :
 */
-int Depth (nbtree P);
+int Depth (address P);
 
 /*
 Nama    :
 NIM     :
 */
-int Max (nbtree Data1, infotype Data2);
+int Max (infotype Data1, infotype Data2);
 
 /*
 Nama    :
 NIM     :
 */
-int Derajat(nbtree P,infotype X);
+int Derajat(address P,infotype X);
 
 /*
 Nama    :
 NIM     :
 */
-int Degree (nbtree P, infotype X);
+int Degree (address P, infotype X);
