@@ -71,10 +71,14 @@ void Level_order(Isi_Tree X, int Maks_node);
 /* IS : P terdefinisi */
 /* FS : Semua simpul P sudah ditampilkan secara Level Order */
 
-void PrintTree (Isi_Tree P);
+void PrintTree(Isi_Tree p, address P, int level);
 /* IS : P terdefinisi */
 /* FS : Semua simpul P sudah ditulis ke layar */
-
+// Penggunaan pertama pada modul utama adalah
+// PrintTree(X, 1, 0);
+// Dimana X adalah variabel bertipe Isi_Tree yang menujuk pada Tree yang dimaksud
+// 1 adalah index awal yang digunakan, jangan menggunakan 0 karena akan membuat sistem kebingungan antara null dan index ke 0
+// 0 adalah initialisasi awal dari level, karena perlu mengunjungi root terlebih dahulu, maka diisi 0
 
 
 /***** Search *****/
