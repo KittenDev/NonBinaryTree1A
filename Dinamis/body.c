@@ -106,10 +106,31 @@ NIM     :
 int nbDaun (address P);
 
 /*
-Nama    :
-NIM     :
+Nama    : Welsya Almaira Indra
+NIM     : 221524032
 */
-int Level (address P, infotype X);
+int Level (address P, infotype X)
+{
+	if (P == nil) {
+        return -1;
+    }
+
+    int level = 1;
+    address currentNode = P;
+
+    while (currentNode != nil) {
+        address childNode = currentNode->ps_fs;
+        while (childNode != nil) {
+            if (childNode->info == x) {
+                return level;
+            }
+            childNode = childNode->ps_nb;
+        }
+        currentNode = currentNode->ps_fs;
+        level++;
+    }
+    return -1;
+}
 
 /*
 Nama    :
