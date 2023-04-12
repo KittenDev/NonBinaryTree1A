@@ -75,7 +75,7 @@ void PrintTree (address P);
 boolean Search (address P, infotype X);
 /* Mengirimkan true jika ada node dari P yang bernilai X */
 
-int NSearch (address P, infotype X);
+address NSearch (address P, infotype X);
 /* Mengirimkan posisi/indeks node jika ada node dari P yang bernilai X */
 
 /***** Fungsi Lain *****/

@@ -91,7 +91,7 @@ boolean Search (address P, infotype X);
 Nama    :
 NIM     :
 */
-int NSearch (address P, infotype X);
+address NSearch (address P, infotype X);
 
 /*
 Nama    :
@@ -137,7 +137,7 @@ int Level (address P, infotype X)
     while (currentNode != nil) {
         address childNode = currentNode->ps_fs;
         while (childNode != nil) {
-            if (childNode->info == x) {
+            if (childNode->info == X) {
                 return level;
             }
             childNode = childNode->ps_nb;
@@ -170,4 +170,22 @@ int Derajat(address P,infotype X);
 Nama    :
 NIM     :
 */
-int Degree (address P, infotype X);
+int Degree (address P, infotype X){
+    address temp;
+    int count=0;
+    if (!IsEmpty(P))
+    {
+        temp = NSearch(P,X);
+        if (temp->ps_fs!=nil)
+        {
+            count++;
+            temp=temp->ps_fs;
+            while (temp->ps_nb!=nil)
+            {
+                count++;
+                temp=temp->ps_nb;
+            }
+        }
+    }
+    return count;
+}
