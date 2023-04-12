@@ -167,8 +167,8 @@ NIM     :
 int Derajat(address P,infotype X);
 
 /*
-Nama    :
-NIM     :
+Nama    : Farhan Muhammad Yasin
+NIM     : 221524008
 */
 int Degree (address P, infotype X){
     address temp;
