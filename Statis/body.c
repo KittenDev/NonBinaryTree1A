@@ -46,7 +46,7 @@ void Create_tree(Isi_Tree X, int Jml_Node)
         {
             printf("Masukan parent dari node %c: ", node_value);
             scanf(" %c", &parent_value);
-            pr_idx = find_node(X, Jml_Node, parent_value);
+            pr_idx = NSearch(X,parent_value);
 
             if (pr_idx != -1)
             {
@@ -72,7 +72,7 @@ void Create_tree(Isi_Tree X, int Jml_Node)
             {
                 printf("Parent node dengan nilai %c tidak ditemukan.\n", parent_value);
             }
-        } while (pr_idx == -1);
+        } while (pr_idx == nil);
     }
 }
 
