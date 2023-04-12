@@ -208,10 +208,24 @@ int nbElmt(Isi_Tree P){
 }
 
 /*
-Nama    :
-NIM     :
+Nama    : Naila Saniyyah Nur'Aini
+NIM     : 221524024
 */
-int nbDaun(Isi_Tree P);
+int nbDaun(Isi_Tree P){
+    int daun = 0;
+    address i = 1;
+    
+    if (i != nil) {
+        if (P[i].ps_fs == nil && P[i].ps_nb == nil) { // Cek apakah node merupakan daun
+            daun++;
+        } else { // Jika bukan daun, cari di anak dan saudara kiri
+            daun += nbDaun(P + P[i].ps_fs);
+            daun += nbDaun(P + P[i].ps_nb);
+        }
+    }
+    
+    return daun;
+}
 
 /*
 Nama    :
