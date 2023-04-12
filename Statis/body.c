@@ -122,10 +122,22 @@ NIM     :
 void PostOrder(Isi_Tree P);
 
 /*
-Nama    :
-NIM     :
+Nama    : Adinda Fauzia Puspita
+NIM     : 221524001
 */
-void Level_order(Isi_Tree X, int Maks_node);
+void Level_order(Isi_Tree X, int Maks_node)
+/* Traversal LevelOrder */
+/* IS : P terdefinisi */
+/* FS : Semua simpul P sudah ditampilkan secara Level Order */
+{
+    int i;
+    for (i = 1; i <= Maks_node; i++) {
+        if (X[i].info != ' ') {
+            printf("%c ", X[i].info);
+        }
+    }
+    printf("\n");
+}
 
 /*
 Nama    : Aryo Rakatama
