@@ -278,10 +278,36 @@ int nbDaun(Isi_Tree P)
 }
 
 /*
-Nama    :
-NIM     :
+Nama    : Retryanzani Dwi Fauzan
+NIM     : 221524028
 */
-int Level(Isi_Tree P, infotype X);
+int Level(Isi_Tree P, infotype X)
+{
+    if (P == NULL) // Jika P adalah NULL, artinya pohon kosong
+    {
+        return -1;
+    }
+    if (P[1].info == X) // Jika akar P memiliki nilai X, artinya P adalah node yang dicari
+    {
+        return 0;
+    }
+    int i, level;
+    for (i = 2; i <= jml_maks; i++) 
+    {
+        if (P[i].info == X) // Jika node ke-i memiliki nilai X, hitung levelnya
+        {
+            level = 0;
+            address parent = P[i].ps_pr;
+            while (parent != 0) 
+            {
+                level++;
+                parent = P[parent].ps_pr;
+            }
+            return level;
+        }
+    }
+    return -1; // Jika X tidak ditemukan dalam pohon
+}
 
 /*
 Nama    : Rayhan Fanez Fathiadi
