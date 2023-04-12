@@ -64,7 +64,7 @@ void Level_order(address X, int Maks_node);
 /* IS : P terdefinisi */
 /* FS : Semua simpul P sudah ditampilkan secara Level Order */
 
-void PrintTree (address P);
+void PrintTree (address P, int level);
 /* IS : P terdefinisi */
 /* FS : Semua simpul P sudah ditulis ke layar */
 
@@ -106,7 +106,7 @@ int Degree (address P, infotype X);
 /* Pohon Non Biner mungkin Kosong, mengirimkan 'degree' yaitu jumlah anak dari satu node */
 /* Basis : Pohon Kosong, degreenya Nol */
 
-void addNBTree(address *treeCurrent, char info, address ps_pr, address ps_fs, address ps_nb)
+void addNBTree(address *treeCurrent, char info, address ps_pr, address ps_fs, address ps_nb);
 /* Modul ini berfungsi untuk menambahkan node baru dengan syarat nilai info, parent, first son, next brother sudah diketahui dan akan menjadi parameter
 	Parameter Output : *treeCurrent
 	Parameter Input	 : info, ps_pr, ps_fs, ps_nb

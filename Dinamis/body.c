@@ -76,10 +76,22 @@ NIM     :
 void Level_order(address X, int Maks_node);
 
 /*
-Nama    :
-NIM     :
+Nama    : Muhamad Firman Firdaus
+NIM     : 221524013
 */
-void PrintTree (address P);
+
+void PrintTree (address P, int level){
+    if (P != NULL) {
+        int i;
+        PrintTree(P->ps_fs, level + 1);
+        printf("\n");
+        for (i = 0; i < level; i++){
+            printf("|   ");
+        }
+        printf("|---%c", P->info);
+        PrintTree(P->ps_nb,level);
+}
+}
 
 /*
 Nama    :Farrel Rahandika
