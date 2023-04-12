@@ -234,10 +234,41 @@ NIM     :
 int Level(Isi_Tree P, infotype X);
 
 /*
-Nama    :
-NIM     :
+Nama    : Rayhan Fanez Fathiadi
+NIM     : 221524027
 */
-int Depth(Isi_Tree P);
+int Depth(Isi_Tree P, address root)
+{
+    //root = indeks array
+    
+    if (root == nil)
+    { // Jika tree kosong
+        return 0;
+    }
+    else if (P[root].ps_fs == nil && P[root].ps_nb == nil)
+    { // Jika tree hanya memiliki satu node
+        return 1;
+    }
+    else if (P[root].ps_fs == nil)
+    { // Jika tree hanya memiliki anak kebawah
+        return Depth(P, P[root].ps_nb) + 1;
+    }
+    else
+    { // Jika tree memiliki anak ke samping
+        int maksDepth = 0;
+        address sibling = P[root].ps_fs;
+        while (sibling != nil)
+        {
+            int siblingDepth = Depth(P, sibling);
+            if (siblingDepth > maksDepth)
+            {
+                maksDepth = siblingDepth;
+            }
+            sibling = P[sibling].ps_nb;
+        }
+        return maksDepth + 1;
+    }
+}
 
 /*
 Nama    :
