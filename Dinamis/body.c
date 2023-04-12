@@ -64,10 +64,21 @@ NIM     :
 void InOrder (address P);
 
 /*
-Nama    :
-NIM     :
+Nama    : Mutiara Dwi Salma
+NIM     : 221524022
 */
 void PostOrder (address P);
+{
+    address current;
+    current = P;
+
+    if (current == nil) {
+        return;
+    }
+    postOrder(current->ps_fs); //Traversal ke anak pertama
+    postOrder(current->ps_nb); //Traversal ke next brother
+    printf("%c ", current->info); //Tampilkan simpul saat traversal mundur
+}
 
 /*
 Nama    :

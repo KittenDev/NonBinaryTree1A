@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/alvin/Documents/GitHub/NonBinaryTree1A/Dinamis",
-      "program": "c:/Users/alvin/Documents/GitHub/NonBinaryTree1A/Dinamis/build/Debug/outDebug",
+      "cwd": "d:/mutt/SDA/SDA tree/NonBinaryTree1A/Dinamis",
+      "program": "d:/mutt/SDA/SDA tree/NonBinaryTree1A/Dinamis/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
