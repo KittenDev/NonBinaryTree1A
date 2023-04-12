@@ -100,10 +100,26 @@ NIM     :
 int nbElmt (address P);
 
 /*
-Nama    :
-NIM     :
+Nama    : Muhamad Rendi Zul Fauzi
+NIM     : 221524015
 */
-int nbDaun (address P);
+int nbDaun (address P){
+    if(P == nil){
+        return 0;
+    }
+    else if (P->ps_fs == nil){
+        return 1;
+    }
+    else{
+        int count = 0;
+        address son = P->ps_fs;
+        while (son != nil){
+            count += nbDaun(son);
+            son = son ->ps_nb;
+        }
+        return count;
+    }
+}
 
 /*
 Nama    : Welsya Almaira Indra
