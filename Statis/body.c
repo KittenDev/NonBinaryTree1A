@@ -271,10 +271,12 @@ int Depth(Isi_Tree P, address root)
 }
 
 /*
-Nama    :
-NIM     :
+Nama    : Saabiq Muhyiyuddin Aulawi
+NIM     : 221524031
 */
-int Max(infotype Data1, infotype Data2);
+int Max(infotype Data1, infotype Data2){
+    return (Data1 > Data2) ? Data1 : Data2;
+}
 
 /*
 Nama    :
