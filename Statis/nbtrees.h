@@ -101,7 +101,7 @@ int Level (Isi_Tree P, infotype X);
 /* Mengirimkan level dari node X yang merupakan salah satu simpul */ 
 /* dr pohon P. Akar (P) levelnya adalah 0. Pohon tidak kosong */
 
-int Depth (Isi_Tree P);
+int Depth (Isi_Tree T, address root);
 /* Pohon Biner mungkin Kosong, mengirimkan 'depth' yaitu tinggi dari Pohon */
 /* Basis : Pohon Kosong, tingginya Nol */
 
