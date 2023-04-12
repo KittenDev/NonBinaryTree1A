@@ -285,7 +285,21 @@ NIM     :
 int Derajat(Isi_Tree P, infotype X);
 
 /*
-Nama    :
-NIM     :
+Nama    : Muhamad Mathar Rizqi
+NIM     : 221524014
 */
-int Degree(Isi_Tree P, infotype X);
+int Degree(Isi_Tree P, infotype X){
+    int index, count=0;
+    if(!IsEmpty(P)){
+        index=NSearch(P,X);
+        if(P[index].ps_fs!=nil){
+            count++;
+            index=P[index].ps_fs;
+            while (P[index].ps_nb!=nil){
+                count++;
+                index=P[index].ps_nb;
+            }
+        }
+    }
+    return count;
+}
