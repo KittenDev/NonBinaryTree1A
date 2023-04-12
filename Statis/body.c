@@ -1,4 +1,5 @@
 #include "nbtrees.h"
+#include <stdbool.h>
 
 /*
 Nama    : Hasna Fitriyani Khairunissa
@@ -7,7 +8,8 @@ NIM     : 221524011
 void init_tree(Isi_Tree *X)
 {
     int i;
-    for (i = 0; i <= jml_maks; i++) {
+    for (i = 0; i <= jml_maks; i++)
+    {
         (*X)[i].info = '\0';
         (*X)[i].ps_fs = -1;
         (*X)[i].ps_nb = -1;
@@ -32,7 +34,7 @@ void Create_tree(Isi_Tree X, int Jml_Node)
     X[1].ps_nb = 0;
     X[1].ps_pr = 0;
 
-    for (i = 2; i <= Jml_Node+1; i++)
+    for (i = 2; i <= Jml_Node + 1; i++)
     {
         printf("Masukan node ke-%d: ", i - 1);
         scanf(" %c", &node_value);
@@ -46,17 +48,17 @@ void Create_tree(Isi_Tree X, int Jml_Node)
         {
             printf("Masukan parent dari node %c: ", node_value);
             scanf(" %c", &parent_value);
-            pr_idx = NSearch(X,parent_value);
+            pr_idx = NSearch(X, parent_value);
 
             if (pr_idx != -1)
             {
-                //check fs nya
+                // check fs nya
                 if (X[pr_idx].ps_fs == 0)
                 {
                     X[pr_idx].ps_fs = i;
                 }
                 else
-                { //cari brother terakhir
+                { // cari brother terakhir
                     nb_idx = X[pr_idx].ps_fs;
                     while (X[nb_idx].ps_nb != 0)
                     {
@@ -65,7 +67,7 @@ void Create_tree(Isi_Tree X, int Jml_Node)
                     X[nb_idx].ps_nb = i;
                 }
 
-                //set parent nya
+                // set parent nya
                 X[i].ps_pr = pr_idx;
             }
             else
@@ -77,7 +79,7 @@ void Create_tree(Isi_Tree X, int Jml_Node)
 }
 
 /*
-Nama    : 
+Nama    :
 NIM     :
 */
 boolean IsEmpty(Isi_Tree P);
@@ -86,40 +88,75 @@ boolean IsEmpty(Isi_Tree P);
 Nama    : Rahma Divina
 NIM     : 221524026
 */
-// implementasi struktur data pohon dengan array, 
+// implementasi struktur data pohon dengan array,
 // biasanya indeks ke-0 tidak digunakan, karena root tree akan berada di indeks ke-1.
 // pemanggilan modul pada main program, parameter int idx akan diisi 1 karena
 // akan memulai traversal PreOrder dari root tree yang berada di indeks ke-1
-void PreOrder(Isi_Tree P, int idx){
-    if(idx == 0){ 
-		return; //mengakhiri ekskeusi modul saat index = 0
-	}
-	printf("%c ",P[idx].info);
-	PreOrder(P,P[idx].ps_fs);
-	PreOrder(P,P[idx].ps_nb);
+void PreOrder(Isi_Tree P, int idx)
+{
+    if (idx == 0)
+    {
+        return; // mengakhiri ekskeusi modul saat index = 0
+    }
+    printf("%c ", P[idx].info);
+    PreOrder(P, P[idx].ps_fs);
+    PreOrder(P, P[idx].ps_nb);
 }
 
 /*
 Nama    : Muhammad Fikri Nur Sya'Bani
 NIM     : 221524019
 */
-void InOrder(Isi_Tree P){
-    if(P != NULL){
-        if(P->ps_fs != NULL){
+void InOrder(Isi_Tree P)
+{
+    if (P != NULL)
+    {
+        if (P->ps_fs != NULL)
+        {
             InOrder(P->ps_fs);
         }
-        printf("%d ", P->info); 
-        if(P->ps_nb != NULL){ 
+        printf("%d ", P->info);
+        if (P->ps_nb != NULL)
+        {
             InOrder(P->ps_nb);
         }
     }
 }
 
 /*
-Nama    :
-NIM     :
+Nama    : Farrel Keiza Muhammad Yamin Putra
+NIM     : 221524009
 */
-void PostOrder(Isi_Tree P);
+void PostOrder(Isi_Tree P)
+{
+    bool resmi;
+    int pcur;
+
+    pcur = 1;
+    resmi = true;
+
+    while (pcur != 0)
+    {
+        if (P[pcur].ps_fs != 0 && resmi)
+        {
+            pcur = P[pcur].ps_fs;
+        }
+        else
+        {
+            printf("%c ", P[pcur].info);
+            if (P[pcur].ps_nb != 0)
+            {
+                pcur = P[pcur].ps_nb;
+                resmi = true;
+            }
+            else
+            {
+                pcur = P[pcur].ps_pr;
+                resmi = false;
+            }
+        }
+    }
+}
 
 /*
 Nama    : Adinda Fauzia Puspita
@@ -131,8 +168,10 @@ void Level_order(Isi_Tree X, int Maks_node)
 /* FS : Semua simpul P sudah ditampilkan secara Level Order */
 {
     int i;
-    for (i = 1; i <= Maks_node; i++) {
-        if (X[i].info != ' ') {
+    for (i = 1; i <= Maks_node; i++)
+    {
+        if (X[i].info != ' ')
+        {
             printf("%c ", X[i].info);
         }
     }
@@ -179,13 +218,16 @@ boolean Search(Isi_Tree P, infotype X);
 Nama    : Akmal G. Hartono
 NIM     : 221524002
 */
-int NSearch(Isi_Tree P, infotype X){
+int NSearch(Isi_Tree P, infotype X)
+{
     int i;
-    for(i = 1; i <= jml_maks; i++){
-	if(P[i].info == X){
-	   return i;
-           break;
-	}
+    for (i = 1; i <= jml_maks; i++)
+    {
+        if (P[i].info == X)
+        {
+            return i;
+            break;
+        }
     }
     return nil;
 }
@@ -194,12 +236,15 @@ int NSearch(Isi_Tree P, infotype X){
 Nama    : Naffa Lenteranisa
 NIM     : 221524023
 */
-int nbElmt(Isi_Tree P){
+int nbElmt(Isi_Tree P)
+{
     int count = 0;
     int i;
 
-    for (i = 1; i <= jml_maks; i++) {
-        if (P[i].info != '\0') { // Node tidak kosong
+    for (i = 1; i <= jml_maks; i++)
+    {
+        if (P[i].info != '\0')
+        { // Node tidak kosong
             count++;
         }
     }
@@ -211,19 +256,24 @@ int nbElmt(Isi_Tree P){
 Nama    : Naila Saniyyah Nur'Aini
 NIM     : 221524024
 */
-int nbDaun(Isi_Tree P){
+int nbDaun(Isi_Tree P)
+{
     int daun = 0;
     address i = 1;
-    
-    if (i != nil) {
-        if (P[i].ps_fs == nil && P[i].ps_nb == nil) { // Cek apakah node merupakan daun
+
+    if (i != nil)
+    {
+        if (P[i].ps_fs == nil && P[i].ps_nb == nil)
+        { // Cek apakah node merupakan daun
             daun++;
-        } else { // Jika bukan daun, cari di anak dan saudara kiri
+        }
+        else
+        { // Jika bukan daun, cari di anak dan saudara kiri
             daun += nbDaun(P + P[i].ps_fs);
             daun += nbDaun(P + P[i].ps_nb);
         }
     }
-    
+
     return daun;
 }
 
@@ -239,8 +289,8 @@ NIM     : 221524027
 */
 int Depth(Isi_Tree P, address root)
 {
-    //root = indeks array
-    
+    // root = indeks array
+
     if (root == nil)
     { // Jika tree kosong
         return 0;
@@ -274,7 +324,8 @@ int Depth(Isi_Tree P, address root)
 Nama    : Saabiq Muhyiyuddin Aulawi
 NIM     : 221524031
 */
-int Max(infotype Data1, infotype Data2){
+int Max(infotype Data1, infotype Data2)
+{
     return (Data1 > Data2) ? Data1 : Data2;
 }
 
@@ -288,16 +339,20 @@ int Derajat(Isi_Tree P, infotype X);
 Nama    : Muhamad Mathar Rizqi
 NIM     : 221524014
 */
-int Degree(Isi_Tree P, infotype X){
-    int index, count=0;
-    if(!IsEmpty(P)){
-        index=NSearch(P,X);
-        if(P[index].ps_fs!=nil){
+int Degree(Isi_Tree P, infotype X)
+{
+    int index, count = 0;
+    if (!IsEmpty(P))
+    {
+        index = NSearch(P, X);
+        if (P[index].ps_fs != nil)
+        {
             count++;
-            index=P[index].ps_fs;
-            while (P[index].ps_nb!=nil){
+            index = P[index].ps_fs;
+            while (P[index].ps_nb != nil)
+            {
                 count++;
-                index=P[index].ps_nb;
+                index = P[index].ps_nb;
             }
         }
     }
