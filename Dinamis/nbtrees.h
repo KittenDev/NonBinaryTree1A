@@ -106,5 +106,14 @@ int Degree (address P, infotype X);
 /* Pohon Non Biner mungkin Kosong, mengirimkan 'degree' yaitu jumlah anak dari satu node */
 /* Basis : Pohon Kosong, degreenya Nol */
 
+void addNBTree(address *treeCurrent, char info, address ps_pr, address ps_fs, address ps_nb)
+/* Modul ini berfungsi untuk menambahkan node baru dengan syarat nilai info, parent, first son, next brother sudah diketahui dan akan menjadi parameter
+	Parameter Output : *treeCurrent
+	Parameter Input	 : info, ps_pr, ps_fs, ps_nb
+*/
+/*I.S: Alamat *treeCurrent yang akan diisi tidak null dan merupakan alamat yang sudah di alokasikan, info,parent, first son, next brother sudah diketahui akan diisi dengan apa 
+F.S: Alamat dari *treeCurrent sudah terisi dengan nilai nilai yang ada di parameter input
+*/
+
 #endif
 
