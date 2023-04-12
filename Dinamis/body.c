@@ -82,10 +82,26 @@ NIM     :
 void PrintTree (address P);
 
 /*
-Nama    :
-NIM     :
+Nama    :Farrel Rahandika
+NIM     :221524010
 */
-boolean Search (address P, infotype X);
+boolean Search (address P, infotype X){
+    //Search dari root
+    if (P == NULL) {
+        return 0;
+    }
+    if (P->info == X) {
+        return 1;
+    }
+    address child = P->ps_fs;
+    while (child != NULL) {
+        if (Search(child, X)) {
+            return 1;
+        }
+        child = child->ps_nb;
+    }
+    return 0;
+}
 
 /*
 Nama    :
