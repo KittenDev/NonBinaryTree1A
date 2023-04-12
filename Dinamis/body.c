@@ -82,10 +82,39 @@ NIM     :
 void PrintTree (address P);
 
 /*
-Nama    :
-NIM     :
+Nama    :Farrel Rahandika
+NIM     :221524010
 */
-boolean Search (address P, infotype X);
+boolean Search(address P, infotype X) {
+    if (P == NULL) {
+        return 0;
+    }
+    if (P->info == X) {
+        return 1;
+    }
+    address child = P->ps_fs;
+    while (child != NULL) {
+        if (Search(child, X)) {
+            return 1;
+        }
+        child = child->ps_nb;
+    }
+    address sibling = P->ps_pr;
+    while (sibling != NULL) {
+        if (sibling->info == X) {
+            return 1;
+        }
+        child = sibling->ps_nb;
+        while (child != NULL) {
+            if (Search(child, X)) {
+                return 1;
+            }
+            child = child->ps_fs;
+        }
+        sibling = sibling->ps_pr;
+    }
+    return 0;
+}
 
 /*
 Nama    :
@@ -217,7 +246,7 @@ void addNBTree(address *treeCurrent, char info, address ps_pr, address ps_fs, ad
 F.S: Alamat dari *treeCurrent sudah terisi dengan nilai nilai yang ada di parameter input
 */
 {
-	if((*treeCurrent != nil)
+	if(*treeCurrent != nil)
 	{
     	(*treeCurrent)->info = info;
     	(*treeCurrent)->ps_pr = ps_pr;
