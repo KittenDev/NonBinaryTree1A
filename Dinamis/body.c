@@ -149,10 +149,19 @@ int Level (address P, infotype X)
 }
 
 /*
-Nama    :
-NIM     :
+Nama    : Muhammad Alvin Abdul Rozak
+NIM     : 221524016
 */
-int Depth (address P);
+int Depth (address P){
+        int max_depth = 0;
+    for (int i = 1; i <= P[0].ps_fs; i++) {
+        int current_depth = Depth(P[P[i].ps_fs]);
+        if (current_depth > max_depth) {
+            max_depth = current_depth;
+        }
+    }
+    return max_depth + 1;
+}
 
 /*
 Nama    :
