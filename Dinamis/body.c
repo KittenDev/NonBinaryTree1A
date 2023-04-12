@@ -82,26 +82,10 @@ NIM     :
 void PrintTree (address P);
 
 /*
-Nama    :Farrel Rahandika
-NIM     :221524010
+Nama    :
+NIM     :
 */
-boolean Search (address P, infotype X){
-    //Search dari root
-    if (P == NULL) {
-        return 0;
-    }
-    if (P->info == X) {
-        return 1;
-    }
-    address child = P->ps_fs;
-    while (child != NULL) {
-        if (Search(child, X)) {
-            return 1;
-        }
-        child = child->ps_nb;
-    }
-    return 0;
-}
+boolean Search (address P, infotype X);
 
 /*
 Nama    :
@@ -217,4 +201,27 @@ int Degree (address P, infotype X){
         }
     }
     return count;
+}
+
+
+/*
+Nama    : Roy Aziz Barera
+NIM     : 221524030
+*/
+void addNBTree(address *treeCurrent, char info, address ps_pr, address ps_fs, address ps_nb)
+/* Modul ini berfungsi untuk menambahkan node baru dengan syarat nilai info, parent, first son, next brother sudah diketahui dan akan menjadi parameter
+	Parameter Output : *treeCurrent
+	Parameter Input	 : info, ps_pr, ps_fs, ps_nb
+*/
+/*I.S: Alamat *treeCurrent yang akan diisi tidak null dan merupakan alamat yang sudah di alokasikan, info,parent, first son, next brother sudah diketahui akan diisi dengan apa 
+F.S: Alamat dari *treeCurrent sudah terisi dengan nilai nilai yang ada di parameter input
+*/
+{
+	if((*treeCurrent != nil)
+	{
+    	(*treeCurrent)->info = info;
+    	(*treeCurrent)->ps_pr = ps_pr;
+    	(*treeCurrent)->ps_fs = ps_fs;
+    	(*treeCurrent)->ps_nb = ps_nb;
+	}
 }
