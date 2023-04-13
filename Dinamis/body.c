@@ -81,10 +81,33 @@ void PostOrder (address P);
 }
 
 /*
-Nama    :
-NIM     :
+Nama    : Rohiid Naufal Juliardi
+NIM     : 221524029
 */
-void Level_order(address X, int Maks_node);
+
+void Level_order(address X, int Maks_node);{
+    address queue[Maks_node+1];
+    int front = 0, rear = 0;
+    address current;
+
+    if (P != nil){
+        queue[rear++] = P;
+
+        while (front != rear){
+            current = queue[front++];
+            printf("%c ", current->info);
+
+            if (current->ps_fs != nil){
+                queue[rear++] = current->ps_fs;
+            }
+            current = current->ps_nb;
+            while (current != nil){
+                queue[rear++] = current;
+                current = current->ps_nb;
+            }
+        }
+    }
+}
 
 /*
 Nama    : Muhamad Firman Firdaus
