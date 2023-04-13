@@ -220,11 +220,17 @@ int Depth (address P){
 }
 
 /*
-Nama    :
-NIM     :
+Nama    : Muhamad Fahrizal Al-Zaelani
+NIM     : 221524012
 */
-int Max (infotype Data1, infotype Data2);
-
+int Max(infotype Data1, infotype Data2){
+    if(Data1>Data2){
+        return Data1;
+    }
+    else if(Data2>Data1){
+        return Data2;
+    }
+}
 /*
 Nama    :
 NIM     :
