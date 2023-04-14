@@ -54,7 +54,7 @@ void PreOrder (address P)
             current = current->ps_pr;
             valid = false;
         }
-    }while (current->ps_pr != nil);
+    }while (current != nil);
 }
 
 /*
@@ -67,7 +67,7 @@ void InOrder (address P);
 Nama    : Mutiara Dwi Salma
 NIM     : 221524022
 */
-void PostOrder (address P);
+void PostOrder (address P)
 {
     address current;
     current = P;
@@ -75,8 +75,8 @@ void PostOrder (address P);
     if (current == nil) {
         return;
     }
-    postOrder(current->ps_fs); //Traversal ke anak pertama
-    postOrder(current->ps_nb); //Traversal ke next brother
+    PostOrder(current->ps_fs); //Traversal ke anak pertama
+    PostOrder(current->ps_nb); //Traversal ke next brother
     printf("%c ", current->info); //Tampilkan simpul saat traversal mundur
 }
 
@@ -85,7 +85,7 @@ Nama    : Rohiid Naufal Juliardi
 NIM     : 221524029
 */
 
-void Level_order(address X, int Maks_node);{
+void Level_order(address P, int Maks_node){
     address queue[Maks_node+1];
     int front = 0, rear = 0;
     address current;
