@@ -37,6 +37,10 @@ typedef nbtree Isi_Tree[jml_maks+1];
 /*  S P E S I F I K A S I  */
 /***************************/
 
+void init_tree(Isi_Tree *X);
+/* I.S: Pohon dalam keadaan kosong, semua elemen pada array Isi_Tree memiliki nilai default.
+   F.S: Setelah fungsi init_tree dijalankan, semua elemen pada array Isi_Tree telah diinisialisasi dengan nilai default yang ditentukan, sehingga pohon dalam keadaan siap digunakan dan diisi dengan data. 
+*/
 
 void Create_tree(Isi_Tree X, int Jml_Node);
 // Create Non Binary Tree sebanyak Jml_Node
